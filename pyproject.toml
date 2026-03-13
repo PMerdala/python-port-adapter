@@ -1,0 +1,41 @@
+[project]
+name = "python-ports-adapters"
+version = "0.1.0"
+description = "test project for ports and adapters architecture"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["fastapi>=0.135.1", "sqlalchemy>=2.0.48", "uvicorn>=0.41.0"]
+
+[dependency-groups]
+dev = ["pytest>=9.0.2", "pytest-cov>=7.0.0", "ruff>=0.15.5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-p no:cacheprovider --cov --no-cov-on-fail --cov-report=xml --cov-report=term"
+
+
+[tool.ruff]
+line-length = 88
+lint.select = [
+    "ALL", # All checks
+    "E",   # All errors
+    "F",   # All pyflakes checks
+    "W",   # All warnings
+    "C90", # Complexity checks
+]
+lint.ignore = ["D211", "D213", "D203"]
+exclude = ["build", "dist", ".venv", "__pycache__"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.coverage.run]
+source_dirs = ["src"]
+branch = true
+data_file = "tests/.coverage"
+omit = ["*/__init__.py", "tests/*"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true

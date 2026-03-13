@@ -1,0 +1,42 @@
+{
+    //Python settings
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "warning"
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.terminal.activateEnvironment": true,
+    // Test python settings
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#2a7748"
+    },
+    "ruff.importStrategy": "useBundled",
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}${/}src;${env:PYTHONPATH}"
+    },
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}${/}src:${env:PYTHONPATH}"
+    },
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}${/}src:${env:PYTHONPATH}"
+    },
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "workbench.preferredHighContrastColorTheme": "Solarized Dark",
+    // Python testing settings
+    //"python.testing.pytestArgs": [
+    //    "--cov=${workspaceFolder}/src",
+    //    "--cov-report=xml",
+    //    "${workspaceFolder}/tests"
+    //],
+    "python.testing.pytestPath": "pytest",
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.cwd": "${workspaceFolder}",
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "python.testing.autoTestDiscoverOnSavePattern": "tests/**/*.py",
+    "testing.coverageToolbarEnabled": true,
+}

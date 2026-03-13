@@ -1,0 +1,7 @@
+POST http://127.0.0.1:8000/orders HTTP/1.1
+content-type: application/json
+
+{
+    "sku": "ABC",
+    "qty": 10
+}
