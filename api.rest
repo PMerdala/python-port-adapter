@@ -3,5 +3,5 @@ content-type: application/json
 
 {
     "sku": "ABC",
-    "qty": 10
+    "qty": 0
 }
